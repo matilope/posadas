@@ -30,7 +30,7 @@ $headers .= "To: $destinatario\r\n";
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 # Instantiate the client.
-$mgClient = new Mailgun('e612db25c17e600def010f135be95ae6-77985560-d7537b8f');
+$mgClient = new Mailgun('478ee6b9c5fba748decda92d6a103fbc-77985560-d672fa72');
 $domain = "https://api.mailgun.net/v3/sandbox257389dde9c646e583296268d5980bd4.mailgun.org";
 # Make the call to the client.
 $result = $mgClient->sendMessage($domain, array(
@@ -40,9 +40,11 @@ $result = $mgClient->sendMessage($domain, array(
 	'text'	=>  "$mensaje"
 ));
 
+mail($destinatario, $asunto, $mensaje, $headers);
+
 header("Location: gracias.html");
 
-// mail($destinatario, $asunto, $mensaje, $headers);
+
 
 // include("connect.php");
 
