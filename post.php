@@ -32,8 +32,8 @@ $mgClient = new Mailgun('e612db25c17e600def010f135be95ae6-77985560-d7537b8f');
 $domain = "https://api.mailgun.net/v3/sandboxb3b54b3383934fdaaeb6411a82c71473.mailgun.org";
 # Make the call to the client.
 $result = $mgClient->sendMessage($domain, array(
-	'from'	=> "Admin <$email>",
-	'to'	=> "<$destinatario>",
+	'from'	=> "Admin <mati02171996@gmail.com>",
+	'to'	=> "<mati02171996@gmail.com>",
 	'subject' => 'Reserva tour',
 	'text'	=>  "$mensaje"
 ));
