@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="estilos/estilos.css" />
+    <link rel="stylesheet" href="estilos/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <!-- Se utilizo Jquery para que se pueda usar una especie de input date en Internet Explorer -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <!-- Script del vendor prefix -->
+    <script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <a href="index.html">
+                <div></div>
+            </a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="ciudad.html">Ciudad</a>
+                    </li>
+                    <li>
+                        <a href="turismo.html">Turismo</a>
+                    </li>
+                    <li>
+                        <a style="color:rgb(0,128,0)" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <h1>¡Contactanos!</h1>
+        <form method="POST" enctype="multipart/form-data" action="post.php">
+            <fieldset>
+                <legend>Reserva aquí</legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" autofocus required />
+                <label for="correo">Correo electronico</label>
+                <input type="email" name="correo" id="correo" placeholder="Correo electronico" required />
+                <label for="actividad">Tipo de actividad</label>
+                <select name="actividad[]" id="actividad" autocomplete="off" multiple size="4" required>
+                    <option disabled value="">Elegí una opción</option>
+                    <option value=" Costanera">Costanera</option>
+                    <option value=" Sitios de interés">Sitios de interés</option>
+                    <option value=" Paseos cercanos">Paseos cercanos</option>
+                    <option value=" Jardín botánico">Jardín botánico</option>
+                    <option value=" Actividades en el río">Actividades en el río</option>
+                    <option value=" Entretenimiento">Entretenimiento</option>
+                </select>
+                <label for="fechaIda">Fecha de ida</label>
+                <input type="text" name="fechaIda" id="fechaIda" autocomplete="off" required />
+                <label for="fechaVuelta">Fecha de vuelta</label>
+                <input type="text" name="fechaVuelta" id="fechaVuelta" autocomplete="off" required />
+                <label for="imagen">Imagen del <abbr title="Documento nacional de identidad">DNI</abbr></label>
+                <input type="file" name="imagen" id="imagen" required />
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" placeholder="Mensaje" rows="6" cols="30"
+                    autocomplete="off"></textarea>
+                <input type="submit" value="Enviar" />
+            </fieldset>
+        </form>
+    </main>
+
+    <div class="contenedor_modal">
+        <div class="modal">
+            <h2>!Gracias por contactarte!</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="contenedor">
+        <a href="https://www.facebook.com/muniposadas" target="_blank"></a>
+        <a href="https://twitter.com/muniposadas" target="_blank"></a>
+        <a href="mailto:comunicacion@posadas.gov.ar" target="_blank"></a>
+        <ul>
+            <li>Matías López</li>
+            <li>Maquetado y Desarrollo Web</li>
+            <li>Mabel García</li>
+        </ul>
+        <p>Trabajo Práctico n°2 del primer cuatrimestre de la Escuela Da Vinci 2022</p>
+    </footer>
+
+    <!-- Header -->
+    <script src="js/header.js"></script>
+    <!-- Formulario -->
+    <script src="js/form.js"></script>
+    <!-- Jquery datepicker -->
+    <!-- Para que el input date funcione en internet explorer tuve que cambiarle el input a text y utilizar Jquery -->
+    <script>
+        $(function () {
+            /* Inicialización en español para la extensión 'UI date picker' para jQuery. */
+            /* Traducido por Vester (xvester@gmail.com). */
+            (function (factory) {
+                "use strict";
+
+                if (typeof define === "function" && define.amd) {
+
+                    // AMD. Register as an anonymous module.
+                    define(["../widgets/datepicker"], factory);
+                } else {
+
+                    // Browser globals
+                    factory(jQuery.datepicker);
+                }
+            })(function (datepicker) {
+                "use strict";
+
+                datepicker.regional.es = {
+                    closeText: "Cerrar",
+                    prevText: "&#x3C;Ant",
+                    nextText: "Sig&#x3E;",
+                    currentText: "Hoy",
+                    monthNames: ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+                        "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+                    monthNamesShort: ["ene", "feb", "mar", "abr", "may", "jun",
+                        "jul", "ago", "sep", "oct", "nov", "dic"],
+                    dayNames: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
+                    dayNamesShort: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+                    dayNamesMin: ["D", "L", "M", "X", "J", "V", "S"],
+                    weekHeader: "Sm",
+                    dateFormat: "dd/mm/yy",
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: ""
+                };
+                datepicker.setDefaults(datepicker.regional.es);
+
+                return datepicker.regional.es;
+
+            });
+            $("#fechaIda").datepicker({ minDate: new Date(2022, 05, 13), maxDate: new Date(2022, 08, 12), dateFormat: "dd-mm-yy" });
+            $("#fechaVuelta").datepicker({ minDate: new Date(2022, 05, 14), maxDate: new Date(2022, 08, 13), dateFormat: "dd-mm-yy" });
+        })
+    </script>
+
+</body>
+
+</html>
