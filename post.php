@@ -6,8 +6,8 @@ $email = $_POST["correo"];
 $actividad = $_POST["actividad"];
 
 if(isset($_POST["actividad"])){
-    foreach ($_POST['actividad'] as $actividad)
-}
+    foreach ($_POST['actividad'] as $actividad);
+};
 
 $fechaIda = $_POST["fechaIda"];
 $fechaVuelta = $_POST["fechaVuelta"];
@@ -24,16 +24,18 @@ $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $email\r\n";
 $headers .= "To: $destinatario\r\n";
 
+
+
 # Include the Autoloader (see "Libraries" for install instructions)
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 # Instantiate the client.
 $mgClient = new Mailgun('e612db25c17e600def010f135be95ae6-77985560-d7537b8f');
-$domain = "https://api.mailgun.net/v3/sandboxb3b54b3383934fdaaeb6411a82c71473.mailgun.org";
+$domain = "https://api.mailgun.net/v3/sandbox257389dde9c646e583296268d5980bd4.mailgun.org";
 # Make the call to the client.
 $result = $mgClient->sendMessage($domain, array(
-	'from'	=> "Admin <mati02171996@gmail.com>",
-	'to'	=> "<mati02171996@gmail.com>",
+	'from'	=> "Admin <$email>",
+	'to'	=> "<$destinatario>",
 	'subject' => 'Reserva tour',
 	'text'	=>  "$mensaje"
 ));
