@@ -16,7 +16,7 @@ $consulta = $_POST["mensaje"];
 
 // move_uploaded_file($_FILES['imagen']['tmp_name'], "img/formulario/".$_FILES['imagen'].".jpg");
 
-$destinatario = "matias.lopez@davinci.edu.ar";
+$destinatario = "mati02171996@gmail.com";
 $asunto = "Reserva tour";
 $mensaje = "<style>ul{padding-left:none;} li::marker {color: rgb(0,128,0);}</style>¡Hola ".$nombre."!\r\n Hemos recibido tu consulta correctamente\r\n"."<ul><li>".$email."</li><li>".$actividad."</li><li>".$fechaIda."</li><li>".$fechaVuelta."</li><li>".$imagen."</li><li>".$consulta."</li></ul>";
 $headers = "Mime-version: 1.0\r\n";
@@ -27,19 +27,16 @@ $headers .= "To: $destinatario\r\n";
 # Include the Autoloader (see "Libraries" for install instructions)
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
-
 # Instantiate the client.
-$mgClient = Mailgun::create('e612db25c17e600def010f135be95ae6-77985560-d7537b8f', 'https://posadasturismo.herokuapp.com');
-$domain = "posadasturismo";
-$params = array(
-  'from'    => "Admin <app267667185@heroku.com>",
-  'to'      => "$email",
-  'subject' => "Reserva tour",
-  'text'    => "$mensaje"
-);
-
+$mgClient = new Mailgun('e612db25c17e600def010f135be95ae6-77985560-d7537b8f');
+$domain = "https://api.mailgun.net/v3/sandboxb3b54b3383934fdaaeb6411a82c71473.mailgun.org";
 # Make the call to the client.
-$mgClient->messages()->send($domain, $params);
+$result = $mgClient->sendMessage($domain, array(
+	'from'	=> "Admin <$email>",
+	'to'	=> "<$destinatario>",
+	'subject' => 'Reserva tour',
+	'text'	=>  "$mensaje"
+));
 
 header("Location: gracias.html");
 
