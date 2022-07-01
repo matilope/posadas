@@ -41,6 +41,8 @@ $params = array(
 # Make the call to the client.
 $mgClient->messages()->send($domain, $params);
 
+header("Location: gracias.html");
+
 // mail($destinatario, $asunto, $mensaje, $headers);
 
 // include("connect.php");
