@@ -36,4 +36,6 @@ mail($destinatario, $asunto, $mensaje, $headers);
 
 // }
 
+header("Location: gracias.html");
+
 ?>
