@@ -2,58 +2,146 @@
 
 $nombre = $_POST["nombre"];
 $email = $_POST["correo"];
-
-$actividad = $_POST["actividad"];
-
-if(isset($_POST["actividad"])){
-    foreach ($_POST['actividad'] as $actividad);
-};
-
 $fechaIda = $_POST["fechaIda"];
 $fechaVuelta = $_POST["fechaVuelta"];
 $imagen = $_FILES['imagen']['name']; 
 $consulta = $_POST["mensaje"];
+$actividad=$_POST['actividad'];
 
-// move_uploaded_file($_FILES['imagen']['tmp_name'], "img/formulario/".$_FILES['imagen'].".jpg");
+move_uploaded_file($_FILES['imagen']['tmp_name'], "img/formulario/".$imagen."");
 
 $destinatario = "mati02171996@gmail.com";
 $asunto = "Reserva tour";
-$mensaje = "<style>ul{padding-left:none;} li::marker {color: rgb(0,128,0);}</style>¡Hola ".$nombre."!\r\n Hemos recibido tu consulta correctamente\r\n"."<ul><li>".$email."</li><li>".$actividad."</li><li>".$fechaIda."</li><li>".$fechaVuelta."</li><li>".$imagen."</li><li>".$consulta."</li></ul>";
+$mensaje='
+    <style>
+        /* General */
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        img {
+            max-width: 100%;
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: rgb(0, 128, 0);
+			margin-top: 24px;
+			margin-bottom: 24px;
+        }
+
+        /* Header */
+        header {
+            width: auto;
+            padding: 20px 10px;
+            background-color: white;
+            border-bottom: 1px solid #c8c8c8;
+        }
+
+        header>div {
+            display: flex;
+            justify-content: center;
+        }
+
+        header>div>a>div {
+            background: url(img/logo.png) no-repeat;
+            width: 300px;
+            height: 50px;
+        }
+
+        li{
+            padding:4px 0px;
+        }
+
+        li span {
+            color: rgb(0, 128, 0);
+            font-weight: bold;
+        }
+
+        .spandiv {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .spandiv::before {
+            content: "\261B";
+        }
+
+        .spandiv:after {
+            content: "\261A";
+        }
+
+        .bloque {
+            margin: 0 auto;
+            width: 400px;
+            text-align: left;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 1px 1px 10px rgb(0 128 0);
+        }
+		@media screen and (max-width:420px){
+			.bloque{
+				width:auto;
+				margin: 6px;
+			}
+		}
+    </style>
+    <header>
+        <div>
+            <a href="index.html">
+                <div></div>
+            </a>
+        </div>
+    </header>';
+
+$mensaje .= "<h1>¡Hola $nombre! Hemos recibido tu consulta correctamente</h1>
+<div class='bloque'>
+	<ul>
+		<li><span>Correo: </span>$email</li>";
+
+for ($x = 1; $x < count($actividad); $x++) {
+$mensaje.= "<li><span>Actividades: </span>".$actividad[$x-1].", ";
+	if($x+1==count($actividad)){
+	$mensaje.= $actividad[$x].".</li>";
+ };
+};
+
+$mensaje.= "<li><span>Fecha ida: </span>".$fechaIda."</li><li><span>Fecha vuelta: </span>".$fechaVuelta."</li>";
+
+if(strlen($consulta)>=1){
+	$mensaje.= "<li><span>Consulta: </span>".$consulta."</li>";
+}
+
+$mensaje.= "<li><img src='img/formulario/".$imagen."'/></li>";
+$mensaje .= "</ul>
+<div class='spandiv'><span> Te esperamos pronto </span></div>
+</div>";
+
 $headers = "Mime-version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $email\r\n";
 $headers .= "To: $destinatario\r\n";
 
-
-
-# Include the Autoloader (see "Libraries" for install instructions)
-require 'vendor/autoload.php';
-use Mailgun\Mailgun;
-# Instantiate the client.
-$mgClient = new Mailgun('478ee6b9c5fba748decda92d6a103fbc-77985560-d672fa72');
-$domain = "https://api.mailgun.net/v3/sandbox257389dde9c646e583296268d5980bd4.mailgun.org";
-# Make the call to the client.
-$result = $mgClient->sendMessage($domain, array(
-	'from'	=> "Admin <$email>",
-	'to'	=> "<$destinatario>",
-	'subject' => 'Reserva tour',
-	'text'	=>  "$mensaje"
-));
-
 mail($destinatario, $asunto, $mensaje, $headers);
 
 header("Location: gracias.html");
-
-
-
-// include("connect.php");
-
-// mysqli_query($conexion, "INSERT INTO formulario VALUES (DEFAULT, '$nombre', '$email', '$actividad', '$fechaIda', '$fechaVuelta', '$imagen', '$consulta')");
-
-// $result = mysqli_query( $conexion, "SELECT * FROM formulario");
-
-// while ($row = mysqli_fetch_row($result)){
-
-// }
 
 ?>
