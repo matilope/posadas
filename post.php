@@ -144,7 +144,35 @@ $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $email\r\n";
 $headers .= "To: $destinatario\r\n";
 
-mail($destinatario, $asunto, $mensaje, $headers);
+require 'PHPMailerAutoload.php';
+
+$mail = new PHPMailer;
+
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'smtp.mailgun.org';                     // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = 'postmaster@sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org';   // SMTP username
+$mail->Password = '0fb187f35a1c7c1c0ef833e6df3760bb-77985560-71f4412c';                           // SMTP password
+$mail->SMTPSecure = 'tls';                            // Enable encryption, only 'tls' is accepted
+
+$mail->From = 'postmaster@sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org';
+$mail->FromName = 'Cliente';
+$mail->addAddress("$email");                 // Add a recipient
+
+$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+
+$mail->Subject = 'Reserva turismo Posadas';
+$mail->Body    = "$mensaje";
+
+if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message has been sent';
+}
+
+
+// mail($destinatario, $asunto, $mensaje, $headers);
 
 header("Location: gracias.html");
 
