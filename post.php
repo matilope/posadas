@@ -15,6 +15,7 @@ $asunto = "Reserva tour";
 $mensaje='
     <style>
         /* General */
+
         * {
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
@@ -48,6 +49,7 @@ $mensaje='
         }
 
         /* Header */
+
         header {
             width: auto;
             padding: 20px 10px;
@@ -74,6 +76,8 @@ $mensaje='
             color: rgb(0, 128, 0);
             font-weight: bold;
         }
+
+        /* Extras */
 
         .spandiv {
             font-size: 20px;
