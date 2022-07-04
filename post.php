@@ -29,7 +29,7 @@ $mensaje.= $actividad[$x-1].", ";
  };
 };
 
-$mensaje.= "</td></tr><tr><th style='vertical-align: top; text-align: left;'>Fecha ida</th><td>".$fechaIda."</td></tr><tr><th style='vertical-align: top; text-align: left;'>Fecha vuelta</th><td>".$fechaVuelta."</td></tr>";
+$mensaje.= "</td></tr><tr><th style='vertical-align: top; text-align: left;'>Fecha ida</th><td>".$fechaIda."</td></tr><tr><th style='vertical-align: top; text-align: left; width: 100px;'>Fecha vuelta</th><td>".$fechaVuelta."</td></tr>";
 
 if(strlen($consulta)>=1){
 	$mensaje.= "<tr><th style='vertical-align: top; text-align: left;'>Consulta</th><td>".$consulta."</td></tr>";
@@ -37,10 +37,10 @@ if(strlen($consulta)>=1){
 
 $mensaje .= "</tbody></table>";
 
-$headers = "Mime-version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=utf-8\r\n";
-$headers .= "From: $email\r\n";
-$headers .= "To: $destinatario\r\n";
+// $headers = "Mime-version: 1.0\r\n";
+// $headers .= "Content-type: text/html; charset=utf-8\r\n";
+// $headers .= "From: $email\r\n";
+// $headers .= "To: $destinatario\r\n";
 
 
 # Include the Autoloader (see "Libraries" for install instructions)

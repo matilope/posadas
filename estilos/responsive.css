@@ -24,6 +24,9 @@
     iframe {
         width: 100%;
     }
+    .fila-hoteles div {
+        width: 38%;
+    }
 }
 
 
@@ -93,6 +96,10 @@
         margin: 0 !important;
     }
 
+    .fila-hoteles div {
+        width: 44%;
+    }
+
     /* Header nav general */
 
     header>div {
@@ -124,6 +131,14 @@
 
     h1{
         font-size:30px !important;
+    }
+
+    .fila-hoteles div {
+        width: 72%;
+    }
+
+    .header-hoteles{
+        font-size:20px;
     }
 }
 
@@ -157,6 +172,10 @@
 
     .modal {
         margin: auto;
+    }
+
+    .fila-hoteles div {
+        width: 92%;
     }
 
     /* Header Nav general */

@@ -326,10 +326,10 @@ ul li:nth-child(2)>ul li a:hover {
 }
 
 main div .imagen:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-.main-index .imagen:hover{
+.main-index .imagen:hover {
     transform: none !important;
 }
 
@@ -827,7 +827,7 @@ footer a:nth-child(3) {
 
 /* Ciudad section */
 
-div[data-name="ciudad"] div img{
+div[data-name="ciudad"] div img {
     height: 300px;
 }
 
@@ -844,7 +844,7 @@ div[data-name="ciudad"] div img{
     opacity: 0;
     transform: scale(0.4);
     transition: all 2s ease;
-    border-radius:20px;
+    border-radius: 20px;
 }
 
 .animacion {
@@ -972,4 +972,95 @@ section:nth-child(1)>.fila div:nth-child(2) {
 
 #entretenimiento:target h2 {
     background-color: rgba(128, 0, 0, 0.8) !important;
+}
+
+/* Gracias */
+
+.fila-hoteles {
+    display: flex;
+    display: -ms-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fila-hoteles div {
+    position: relative;
+    width: 22%;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    box-shadow: 1px 1px 20px #7aa87c;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
+
+.fila-hoteles div h3 {
+    position: absolute;
+    top: 60%;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    margin: 0px;
+    border-radius:4px;
+    background-color:rgba(0, 128, 0, 0.8);
+    left:0;
+    font-size: 16px;
+}
+
+.fila-hoteles div span{
+    position: absolute;
+    top: 46%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-weight: bold;
+    left: 0;
+    border-radius: 4px;
+    margin: 1px;
+    font-size: 14px;
+}
+
+.fila-hoteles div .imagen{
+    border-radius:4px;
+}
+
+.fila-hoteles div ul{
+    text-align: left;
+}
+
+.fila-hoteles div ul li{
+    font-size: 14px;
+    word-break: break-all;
+    display: block;
+}
+
+.header-hoteles::before, .header-hoteles::after{
+content:"\2605";
+color:rgb(0,128,0);
+}
+
+
+.fila-hoteles div h3, .fila-hoteles div span {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-30px);} 
+    60% {-webkit-transform: translateY(-15px);} 
+} 
+
+@keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+} 
+
+.fila-hoteles div:hover h3, .fila-hoteles div:hover span { 
+    -webkit-animation-name: bounce; 
+    animation-name: bounce; 
 }
