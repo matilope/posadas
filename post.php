@@ -135,42 +135,27 @@ if(strlen($consulta)>=1){
 }
 
 $mensaje.= "<li><img src='img/formulario/".$imagen."'/></li>";
-$mensaje .= "</ul>
-<div class='spandiv'><span> Te esperamos pronto </span></div>
-</div>";
+$mensaje .= "</ul><div class='spandiv'><span> Te esperamos pronto </span></div></div>";
 
 $headers = "Mime-version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "From: $email\r\n";
 $headers .= "To: $destinatario\r\n";
 
-require 'PHPMailerAutoload.php';
 
-$mail = new PHPMailer;
-
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mailgun.org';                     // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'postmaster@sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org';   // SMTP username
-$mail->Password = '0fb187f35a1c7c1c0ef833e6df3760bb-77985560-71f4412c';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable encryption, only 'tls' is accepted
-
-$mail->From = 'postmaster@sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org';
-$mail->FromName = 'Cliente';
-$mail->addAddress("$email");                 // Add a recipient
-
-$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-
-$mail->Subject = 'Reserva turismo Posadas';
-$mail->Body    = "$mensaje";
-
-if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent';
-}
-
+# Include the Autoloader (see "Libraries" for install instructions)
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
+# Instantiate the client.
+`$mgClient = Mailgun::create('cfde54b68d339230200befc7ceccef79-77985560-ccbed702);
+$domain = "sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org";
+$params = array(
+'from' => "Usuario <$email>",
+'to' => 'Admin <mati02171996@gmail.com>',
+'subject' => 'Reserva turismo Posadas',
+'text' => "$mensaje"
+);
+$mgClient->messages()->send($domain, $params);`;
 
 // mail($destinatario, $asunto, $mensaje, $headers);
 
