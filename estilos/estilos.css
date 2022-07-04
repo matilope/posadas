@@ -62,12 +62,8 @@ iframe[data-name="map"] {
     margin: 0;
 }
 
-strong:first-child {
-    color: rgb(0, 128, 0);
-}
-
-strong~strong {
-    color: rgb(199, 22, 22);
+strong {
+    font-weight: normal;
 }
 
 
