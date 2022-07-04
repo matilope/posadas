@@ -11,7 +11,7 @@ $actividad=$_POST['actividad'];
 move_uploaded_file($_FILES['imagen']['tmp_name'], "img/formulario/".$imagen."");
 
 $destinatario = "mati02171996@gmail.com";
-$asunto = "Reserva tour";
+$asunto = "Reserva turismo posadas";
 $mensaje='
     <style>
         /* General */
@@ -116,10 +116,7 @@ $mensaje='
         </div>
     </header>';
 
-$mensaje .= "<h1>¡Hola $nombre! Hemos recibido tu consulta correctamente</h1>
-<div class='bloque'>
-	<ul>
-		<li><span>Correo: </span>$email</li>";
+$mensaje .= "<h1>¡Hola $nombre! Hemos recibido tu consulta correctamente</h1><div class='bloque'><ul><li><span>Correo: </span>$email</li>";
 
 for ($x = 1; $x < count($actividad); $x++) {
 $mensaje.= "<li><span>Actividades: </span>".$actividad[$x-1].", ";
@@ -154,9 +151,9 @@ $mg = Mailgun::create('cfde54b68d339230200befc7ceccef79-77985560-ccbed702'); // 
 // $mg->messages()->send($domain, $params);
 $mg->messages()->send('sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org', [
   'from'    =>  "$email",
-  'to'      => 'mati02171996@gmail.com',
-  'subject' => 'Reserva turismo Posadas',
-  'text'    => "$mensaje"
+  'to'      => "$destinatario",
+  'subject' => "$asunto",
+  'html'    => "$mensaje"
 ]);
 
 // mail($destinatario, $asunto, $mensaje, $headers);
