@@ -146,16 +146,18 @@ $headers .= "To: $destinatario\r\n";
 # Include the Autoloader (see "Libraries" for install instructions)
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
-# Instantiate the client.
-`$mgClient = Mailgun::create('cfde54b68d339230200befc7ceccef79-77985560-ccbed702);
-$domain = "sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org";
-$params = array(
-'from' => "Usuario <$email>",
-'to' => 'Admin <mati02171996@gmail.com>',
-'subject' => 'Reserva turismo Posadas',
-'text' => "$mensaje"
-);
-$mgClient->messages()->send($domain, $params);`;
+
+// First, instantiate the SDK with your API credentials
+$mg = Mailgun::create('cfde54b68d339230200befc7ceccef79-77985560-ccbed702'); // For US servers
+
+// Now, compose and send your message.
+// $mg->messages()->send($domain, $params);
+$mg->messages()->send('sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org', [
+  'from'    =>  "$email",
+  'to'      => 'mati02171996@gmail.com',
+  'subject' => 'Reserva turismo Posadas',
+  'text'    => "$mensaje"
+]);
 
 // mail($destinatario, $asunto, $mensaje, $headers);
 
