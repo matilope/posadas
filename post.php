@@ -8,11 +8,11 @@ $imagen = $_FILES['imagen']['name'];
 $consulta = $_POST["mensaje"];
 $actividad=$_POST['actividad'];
 
-move_uploaded_file($_FILES['imagen']['tmp_name'], "img/formulario/".$imagen."");
+move_uploaded_file($_FILES['imagen']['tmp_name'], "https://posadasciudad.herokuapp.com/img/formulario/".$imagen);
 
 $destinatario = "mati02171996@gmail.com";
 $asunto = "Reserva turismo posadas";
-$mensaje="<table style='margin:0 auto; background-color:rgb(0,128,0);color:white; padding:20px; border-radius:20px; width:auto; box-shadow:1px 1px 10px rgb(0,128,0);'>
+$mensaje="<table style='margin:0 auto; background-color:rgb(0,128,0);color:white; padding:20px; border-radius:20px; box-shadow:1px 1px 10px rgb(0,128,0);'>
 <h1 style='text-align:center; color:rgb(0,128,0); text-transform:capitalize;'>¡Hola $nombre! Hemos recibido tu consulta correctamente</h1>
 <tr>
     <th>Correo</th>
@@ -38,7 +38,7 @@ if(strlen($consulta)>=1){
 	$mensaje.= "<td>".$consulta."</td>";
 }
 
-$mensaje.= "<td><img src='https://posadasciudad.herokuapp.com/img/formulario".$imagen." alt='Imagen DNI'/>'</td></tr></table>";
+$mensaje.= "<td><img src='https://posadasciudad.herokuapp.com/img/formulario/".$imagen."'/></td></tr></table>";
 
 $headers = "Mime-version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
