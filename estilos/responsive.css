@@ -73,9 +73,7 @@
     }
 
     form {
-        width: auto;
-        margin-left: 10px;
-        margin-right: 10px;
+        width: 520px;
     }
 
     .eventos div {
@@ -131,6 +129,12 @@
 
     h1{
         font-size:30px !important;
+    }
+
+    form {
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .fila-hoteles div {

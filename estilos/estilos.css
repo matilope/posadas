@@ -1034,6 +1034,8 @@ section:nth-child(1)>.fila div:nth-child(2) {
 
 .fila-hoteles div ul{
     text-align: left;
+    margin-top:10px;
+    margin-bottom:6px;
 }
 
 .fila-hoteles div ul li{
