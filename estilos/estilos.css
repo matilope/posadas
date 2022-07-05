@@ -15,6 +15,12 @@ body {
     background: url("../img/background.jpg") repeat fixed;
 }
 
+main {
+    /* Para que funcione en internet explorer */
+    display: block;
+    width: 1200px;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -392,6 +398,13 @@ section .fila div p a:hover {
 
 section .fila div:nth-child(2) {
     margin: 0 auto;
+}
+
+div[style="text-align:left;"]>h3{
+    background:url("../img/index/icono_mapa.png") no-repeat;
+    height: 35px;
+    padding-left: 30px;
+    padding-top: 12px;
 }
 
 
@@ -1044,11 +1057,19 @@ section:nth-child(1)>.fila div:nth-child(2) {
     display: block;
 }
 
+.fila-hoteles div ul li a{
+    padding:0;
+}
+
+.fila-hoteles div ul li a:hover{
+    color:rgb(0,128,0) !important;
+    background-color: transparent;
+}
+
 .header-hoteles::before, .header-hoteles::after{
 content:"\2605";
 color:rgb(0,128,0);
 }
-
 
 .fila-hoteles div h3, .fila-hoteles div span {
 	-webkit-animation-duration: 1s;
