@@ -66,6 +66,13 @@ strong {
     font-weight: normal;
 }
 
+picture{
+    width: 100% !important;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+}
+
 
 /* Header */
 
@@ -326,7 +333,7 @@ ul li:nth-child(2)>ul li a:hover {
 }
 
 main div .imagen:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .main-index .imagen:hover {
