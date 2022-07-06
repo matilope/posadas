@@ -89,7 +89,7 @@ modal.style.width = "600px";
 const data = [
     {
         h2: "Playa El Brete",
-        p: "La playa El Brete es la más cercana a la ciudad, ubicada sobre una de las arterias principales: la avenida Urquiza y Costanera. En la playa, además de disfrutar del sol y del río, podes realizar distintas actividades deportivas como ser voley y fútbol, calistenia (entrenamiento de barras). Además, en las cercanías tenés la opción de alquiler de kayaks (Club Náutico León Seró) y el skate-bike park. Además, a 200 metros del balneario, sobre la avenida Urquiza se encuentra la Reserva Urbana del Arroyo Itá. Una opción de paseo por la naturaleza en el corazón de la ciudad. Mirá los horarios en los que podés visitar la reserva. ¡Y la oferta gastronómica de la mano de los mejores restós! Servicio a la carta, cerveza artesanal, heladerías.",
+        p: "La playa El Brete es la más cercana a la ciudad, ubicada sobre una de las arterias principales: la avenida Urquiza y Costanera. En la playa, además de disfrutar del sol y del río, podes realizar distintas actividades deportivas como ser vóley y fútbol, calistenia (entrenamiento de barras). Además, en las cercanías tenés la opción de alquiler de kayaks (Club Náutico León Seró) y el skate-bike park. Además, a 200 metros del balneario, sobre la avenida Urquiza se encuentra la Reserva Urbana del Arroyo Itá. Una opción de paseo por la naturaleza en el corazón de la ciudad. Mirá los horarios en los que podés visitar la reserva. ¡Y la oferta gastronómica de la mano de los mejores restós! Servicio a la carta, cerveza artesanal, heladerías.",
         img: 'img/turismo/modal/playa.jpg'
     },
     {
@@ -126,14 +126,11 @@ const data = [
         if (isIE) {
             contenedor_modal.style.display = "block";
             contenedor_modal.style.animation = "fadeIn 1s";
-            img[1].style.maxWidth = "100%";
-            img[1].style.height = "400px";
             p.style.textAlign = "left";
             modal.style.margin = "40px auto";
         } else {
             contenedor_modal.style = "display:flex; display:-ms-flex; animation: fadeIn 1s; -webkit-animation: fadeIn 1s; -moz-animation: fadeIn 1s; -o-animation: fadeIn 1s; -ms-animation: fadeIn 1s;";
             p.style = "text-align:left;";
-            img[1].style = "max-width:100%; max-height:400px;";
         }
     });
 })

@@ -24,6 +24,7 @@
     iframe {
         width: 100%;
     }
+    
     .fila-hoteles div {
         width: 38%;
     }
@@ -45,7 +46,7 @@
         font-size:14px !important;
     }
 
-    div[data-name="ciudad"] div{
+    .ciudad div{
         width:42% !important;
     }
 
@@ -60,12 +61,6 @@
 
     section .fila div {
         width: 96% !important;
-    }
-
-    .modal {
-        width: auto !important;
-        margin-left: 10px;
-        margin-right: 10px;
     }
 
     img[src="img/turismo/modal/cierre.png"] {
@@ -113,13 +108,15 @@
     }
 }
 
+
 @media screen and (max-width:600px) {
+    
     #costanera, #intereses, #paseos, #jardinbotanico, #rio, #entretenimiento{
         width:80% !important;
         font-size:18px !important;
     }
 
-    div[data-name="ciudad"] div{
+    .ciudad div{
         width:80% !important;
     }
 
@@ -137,6 +134,10 @@
         margin-right: 10px;
     }
 
+    .modal {
+        width: 460px !important;
+    }
+
     .fila-hoteles div {
         width: 72%;
     }
@@ -146,14 +147,19 @@
     }
 }
 
+
 @media screen and (max-width:480px) {
+
     .modal {
-        width: 360px !important;
+        width: auto !important;
+        margin-left:10px;
+        margin-right: 10px;
     }
 
     img[src="img/turismo/modal/cierre.png"] {
         max-width: 32px;
         max-height: 32px;
+        left:88%;
     }
 
     .fila div, section .fila{
@@ -169,13 +175,8 @@
     }
 
     form {
-        width: auto;
         margin-left: 6px;
         margin-right: 6px;
-    }
-
-    .modal {
-        margin: auto;
     }
 
     .fila-hoteles div {
@@ -183,10 +184,6 @@
     }
 
     /* Header Nav general */
-
-    h2 {
-        font-size: 18px;
-    }
 
     span {
         font-size: 14px;
