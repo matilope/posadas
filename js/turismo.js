@@ -121,6 +121,7 @@ const data = [
 
 
 /* Estilos */
+
 [costanera, intereses, paseos, jardinbotanico, rio, entretenimiento].forEach(function (evento) {
     evento.addEventListener('click', function (e) {
         if (isIE) {
