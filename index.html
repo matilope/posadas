@@ -43,15 +43,9 @@
 
     <div class="contenedor" style="padding:0px;">
         <div class="galeria">
-            <div class="slide activeslide">
-                <img src="img/monumento_sanmartin.jpg" alt="Monumento san martin" />
-            </div>
-            <div class="slide">
-                <img src="img/monumento_andresito.jpg" alt="Monumento san martin" />
-            </div>
-            <div class="slide">
-                <img src="img/posadas_costa_sur.jpg" alt="Posadas costa sur" />
-            </div>
+            <img class="imagen-galeria activa" src="img/monumento_sanmartin.jpg" alt="Monumento san martin" />
+            <img class="imagen-galeria" src="img/monumento_andresito.jpg" alt="Monumento san martin" />
+            <img class="imagen-galeria" src="img/posadas_costa_sur.jpg" alt="Posadas costa sur" />
         </div>
     </div>
 
@@ -195,33 +189,22 @@
     <script src="js/header.js"></script>
     <!-- Galeria -->
     <script>
-        /* No funciona en internet explorer */
-        let slides = document.querySelectorAll('.slide');
-        let currentSlide = 1;
-
-        function repeat(activeClass) {
-            let active = document.getElementsByClassName('activeslide');
-            let i = 1;
-
-            function repeater() {
-                setTimeout(function () {
-                    for (let j = 0; j < active.length; j++) {
-                        active[j].classList.remove('activeslide');
-                        slides[i].classList.add('activeslide');
-                        i++;
-                        if (slides.length == i) {
-                            i = 0;
-                        }
-                        if (i >= slides.length) {
-                            return;
-                        }
-                    }
-                    repeater();
-                }, 6000);
-            }
-            repeater();
+        let imagenes = document.querySelectorAll(".imagen-galeria");
+        let index = 0;
+        function repetir() {
+            setInterval(function () {
+                imagenes[index].classList.remove("activa");
+                index++;
+                if (index < imagenes.length) {
+                    imagenes[index].classList.add("activa");
+                }
+                if (index == imagenes.length) {
+                    index = 0;
+                    imagenes[index].classList.add("activa");
+                }
+            }, 4000);
         }
-        repeat();
+        repetir();
     </script>
 
 </body>

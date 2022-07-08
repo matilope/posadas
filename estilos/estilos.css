@@ -274,29 +274,20 @@ ul li:nth-child(2)>ul li a:hover {
 .galeria {
     position: relative;
     width: 100%;
-    background: #cfcfcf;
     height: 400px;
 }
 
-.galeria .slide {
-    z-index: 1;
+.activa {
+    display: block;
+    transition: 1s;
+    opacity: 1 !important;
+}
+
+.imagen-galeria {
+    opacity: 0;
     position: absolute;
-    width: 100%;
-    clip-path: circle(0% at 0 50%);
-}
-
-.galeria .slide.activeslide {
-    clip-path: circle(150% at 0 50%);
-    transition: 2s;
-    transition-property: clip-path;
-}
-
-.galeria .slide img {
-    z-index: 1;
-    width: 100%;
-    object-fit: cover;
-    -o-object-fit: cover;
-    height: 400px;
+    left: 0;
+    top: 0;
 }
 
 
@@ -1001,6 +992,11 @@ section:nth-child(1)>.fila div:nth-child(2) {
     display: -ms-flex;
     flex-wrap: wrap;
     justify-content: center;
+    animation: slidein 3s;
+    -webkit-animation: slidein 3s;
+    -moz-animation: slidein 3s;
+    -o-animation: slidein 3s;
+    -ms-animation: slidein 3s;
 }
 
 .fila-hoteles div {

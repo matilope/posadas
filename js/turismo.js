@@ -148,7 +148,7 @@ costanera.addEventListener('click', function (e) {
     header2.textContent = data[0].h2;
     p.textContent = data[0].p;
     img[1].src = data[0].img;
-    img[1].alt = "Playa El Brete";
+    img[1].alt = data[0].h2;
 });
 intereses.addEventListener('click', function (e) {
     window.scroll({
@@ -159,7 +159,7 @@ intereses.addEventListener('click', function (e) {
     header2.textContent = data[1].h2;
     p.textContent = data[1].p;
     img[1].src = data[1].img;
-    img[1].alt = "Monumento a Andresito Guacurarí";
+    img[1].alt = data[1].h2;
 });
 paseos.addEventListener('click', function (e) {
     window.scroll({
@@ -170,7 +170,7 @@ paseos.addEventListener('click', function (e) {
     header2.textContent = data[2].h2;
     p.textContent = data[2].p;
     img[1].src = data[2].img;
-    img[1].alt = "Parque Provincial Cañadón de Profundidad";
+    img[1].alt = data[2].h2;
 });
 jardinbotanico.addEventListener('click', function (e) {
     window.scroll({
@@ -181,7 +181,7 @@ jardinbotanico.addEventListener('click', function (e) {
     header2.textContent = data[3].h2;
     p.textContent = data[3].p;
     img[1].src = data[3].img;
-    img[1].alt = "Jardín Botánico Alberto Roth";
+    img[1].alt = data[3].h2;
 });
 rio.addEventListener('click', function (e) {
     window.scroll({
@@ -192,7 +192,7 @@ rio.addEventListener('click', function (e) {
     header2.textContent = data[4].h2;
     p.textContent = data[4].p;
     img[1].src = data[4].img;
-    img[1].alt = "Hombre en kayak en el Río Paraná";
+    img[1].alt = data[4].h2;
 });
 entretenimiento.addEventListener('click', function (e) {
     window.scroll({
@@ -203,7 +203,7 @@ entretenimiento.addEventListener('click', function (e) {
     header2.textContent = data[5].h2;
     p.textContent = data[5].p;
     img[1].src = data[5].img;
-    img[1].alt = "Parque del conocimiento";
+    img[1].alt = data[5].h2;
 });
 
 

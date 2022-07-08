@@ -24,6 +24,10 @@
     iframe {
         width: 100%;
     }
+
+    iframe[src*="youtube"]{
+        display: none;
+    }
     
     .fila-hoteles div {
         width: 38%;
@@ -151,9 +155,13 @@
 @media screen and (max-width:480px) {
 
     .modal {
-        width: auto !important;
-        margin-left:10px;
+        width: 100% !important;
+        margin-left: 10px;
         margin-right: 10px;
+    }
+    
+    .modal>img{
+        max-width: 100%;
     }
 
     img[src="img/turismo/modal/cierre.png"] {
