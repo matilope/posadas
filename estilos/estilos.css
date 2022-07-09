@@ -279,7 +279,7 @@ ul li:nth-child(2)>ul li a:hover {
 
 .activa {
     display: block;
-    transition: 1s;
+    transition: 2s;
     opacity: 1 !important;
 }
 
@@ -1037,6 +1037,12 @@ section:nth-child(1)>.fila div:nth-child(2) {
     font-size: 14px;
 }
 
+.exito{
+   color:rgb(0,128,0);
+   font-weight: bold;
+   font-size: 20px;
+}
+
 .fila-hoteles div .imagen {
     border-radius: 4px;
 }
@@ -1048,7 +1054,7 @@ section:nth-child(1)>.fila div:nth-child(2) {
 }
 
 .fila-hoteles div ul li {
-    font-size: 14px;
+    font-size: 14px !important;
     word-break: break-all;
     display: block;
 }

@@ -60,7 +60,6 @@
 
     section .fila {
         width: 80% !important;
-        justify-content: flex-start !important;
     }
 
     section .fila div {
@@ -189,6 +188,10 @@
 
     .fila-hoteles div {
         width: 92%;
+    }
+
+    .exito{
+        margin-left:5px;
     }
 
     /* Header Nav general */
