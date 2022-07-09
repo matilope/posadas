@@ -15,15 +15,9 @@ for (let i = 0; i < fila.length; i++) {
 
 const h2 = document.querySelectorAll("h2");
 
-for (let i = 0; i < h2.length; i++) {
+for (let i = 0; i < 4; i++) {
     h2[i].style.textAlign = "left";
     h2[i].style.color = "black";
-    h2[4].style.color = "rgb(0, 128, 0)";
-    h2[4].style.fontSize = "30px";
-    h2[4].style.textAlign = "center";
-    h2[4].style.display = "inline-block";
-    h2[4].style.background = "url(img/index/icono_visitanos.png) 10% 28% no-repeat";
-    h2[4].style.width = "223px";
 }
 
 const contenedor = document.querySelectorAll(".contenedor");

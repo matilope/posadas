@@ -377,6 +377,15 @@ section .fila div {
     width: 46%;
 }
 
+.header_visitas{
+    text-align:center;
+    color:rgb(0, 128, 0);
+    font-size:30px;
+    display:inline-block;
+    background: url("../img/index/icono_visitanos.png") 10% 28% no-repeat;
+    width: 223px;
+}
+
 section .fila div p a {
     color: rgb(0, 128, 0);
     font-weight: bold;

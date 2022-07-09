@@ -37,6 +37,10 @@
 
 @media screen and (max-width:800px) {
 
+    body{
+        background:white;
+    }
+
     iframe{
         display: none;
     }
@@ -124,7 +128,7 @@
     }
 
     h1{
-        font-size:30px !important;
+        font-size:30px;
     }
 
     form {
@@ -163,8 +167,20 @@
         width: 90% !important;
     }
 
+    h1{
+        font-size:26px;
+    }
+
     h2 {
-        font-size: 18px;
+        font-size: 22px !important;
+    }
+
+    .header_visitas{
+        width: 184px;
+    }
+
+    h3{
+        font-size:16px;
     }
 
     span {
