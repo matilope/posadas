@@ -89,8 +89,13 @@ for (let i = 0; i < h2.length; i++) {
         }
     })();
     
-
-
+    if (isIE) {
+        if (headers.matches) {
+            h2[i].style.width = "166px";
+        } else {
+            h2[i].style.width = "204px";
+        }
+    } else {
         headers.addEventListener("onchange", function (e) {
             if (e.matches) {
                 h2[i].style.width = "166px";
@@ -98,7 +103,7 @@ for (let i = 0; i < h2.length; i++) {
                 h2[i].style.width = "204px";
             }
         });
-    
+    }
 }
 
 /* Animation scroll */
