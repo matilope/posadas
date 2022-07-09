@@ -52,6 +52,7 @@ $mg = Mailgun::create('cfde54b68d339230200befc7ceccef79-77985560-ccbed702'); // 
 
 // Now, compose and send your message.
 // $mg->messages()->send($domain, $params);
+
 $mg->messages()->send('sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org', [
   'from'    =>  $email,
   'to'      => $destinatario,
