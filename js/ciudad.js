@@ -89,14 +89,14 @@ for (let i = 0; i < h2.length; i++) {
         }
     })();
 
-    function screenTest(e) {
+    function mediaqueries(e) {
         if (e.matches) {
             h2[i].style.width = "166px";
         } else {
             h2[i].style.width = "204px";
         }
     }
-    headers.addEventListener("change", screenTest);
+    headers.addEventListener("change", mediaqueries);
 
 }
 
