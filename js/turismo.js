@@ -81,8 +81,10 @@ modal.appendChild(imgs);
 const header2 = document.createElement("h2");
 modal.insertBefore(header2, p);
 
-const img = document.querySelectorAll(".modal img");
+const img = document.querySelector(".modal img");
 modal.style.width = "600px";
+
+const cierre = document.querySelector("#cierre");
 
 /* Constante de data para tener el codigo un poco mas ordenado */
 
@@ -147,8 +149,8 @@ costanera.addEventListener('click', function (e) {
     });
     header2.textContent = data[0].h2;
     p.textContent = data[0].p;
-    img[1].src = data[0].img;
-    img[1].alt = data[0].h2;
+    img.src = data[0].img;
+    img.alt = data[0].h2;
 });
 intereses.addEventListener('click', function (e) {
     window.scroll({
@@ -158,8 +160,8 @@ intereses.addEventListener('click', function (e) {
     });
     header2.textContent = data[1].h2;
     p.textContent = data[1].p;
-    img[1].src = data[1].img;
-    img[1].alt = data[1].h2;
+    img.src = data[1].img;
+    img.alt = data[1].h2;
 });
 paseos.addEventListener('click', function (e) {
     window.scroll({
@@ -169,8 +171,8 @@ paseos.addEventListener('click', function (e) {
     });
     header2.textContent = data[2].h2;
     p.textContent = data[2].p;
-    img[1].src = data[2].img;
-    img[1].alt = data[2].h2;
+    img.src = data[2].img;
+    img.alt = data[2].h2;
 });
 jardinbotanico.addEventListener('click', function (e) {
     window.scroll({
@@ -180,8 +182,8 @@ jardinbotanico.addEventListener('click', function (e) {
     });
     header2.textContent = data[3].h2;
     p.textContent = data[3].p;
-    img[1].src = data[3].img;
-    img[1].alt = data[3].h2;
+    img.src = data[3].img;
+    img.alt = data[3].h2;
 });
 rio.addEventListener('click', function (e) {
     window.scroll({
@@ -191,8 +193,8 @@ rio.addEventListener('click', function (e) {
     });
     header2.textContent = data[4].h2;
     p.textContent = data[4].p;
-    img[1].src = data[4].img;
-    img[1].alt = data[4].h2;
+    img.src = data[4].img;
+    img.alt = data[4].h2;
 });
 entretenimiento.addEventListener('click', function (e) {
     window.scroll({
@@ -202,14 +204,14 @@ entretenimiento.addEventListener('click', function (e) {
     });
     header2.textContent = data[5].h2;
     p.textContent = data[5].p;
-    img[1].src = data[5].img;
-    img[1].alt = data[5].h2;
+    img.src = data[5].img;
+    img.alt = data[5].h2;
 });
 
 
 /* Boton para cerrar el modal */
 
-img[0].addEventListener('click', function (e) {
+cierre.addEventListener('click', function (e) {
     if (isIE) {
         contenedor_modal.style.animation = "fadeOut 1s";
         setTimeout(function () {

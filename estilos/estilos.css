@@ -277,17 +277,17 @@ ul li:nth-child(2)>ul li a:hover {
     height: 400px;
 }
 
-.activa {
-    display: block;
-    transition: 2s;
-    opacity: 1 !important;
-}
-
 .imagen-galeria {
     opacity: 0;
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.activa {
+    display: block;
+    transition: 2s;
+    opacity: 1;
 }
 
 
@@ -790,11 +790,12 @@ input[value="Enviar"]:hover {
     padding-bottom: 10px;
 }
 
-img[src="img/turismo/modal/cierre.png"] {
-    max-width: 100%;
-    position: absolute;
-    left: 92%;
-    top: 2%;
+#cierre {
+    font-size: 45px;
+    color:rgb(0,128,0);
+    border:none;
+    background:transparent;
+    float: right;
     cursor: pointer;
 }
 
@@ -1037,10 +1038,10 @@ section:nth-child(1)>.fila div:nth-child(2) {
     font-size: 14px;
 }
 
-.exito{
-   color:rgb(0,128,0);
-   font-weight: bold;
-   font-size: 20px;
+.exito {
+    color: rgb(0, 128, 0);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .fila-hoteles div .imagen {

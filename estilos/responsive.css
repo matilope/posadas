@@ -66,10 +66,6 @@
         width: 96% !important;
     }
 
-    img[src="img/turismo/modal/cierre.png"] {
-        left: 90%;
-    }
-
     form {
         width: 520px;
     }
@@ -161,12 +157,6 @@
     
     .modal>img{
         max-width: 100%;
-    }
-
-    img[src="img/turismo/modal/cierre.png"] {
-        max-width: 32px;
-        max-height: 32px;
-        left:88%;
     }
 
     .fila div, section .fila{
