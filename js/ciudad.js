@@ -89,13 +89,6 @@ for (let i = 0; i < h2.length; i++) {
         }
     })();
     
-    function media(e) {
-        if (e.matches) {
-            h2[i].style.width = "166px";
-        } else {
-            h2[i].style.width = "204px";
-        }
-    }
 
     if (isIE) {
         if (headers.matches) {
@@ -104,9 +97,21 @@ for (let i = 0; i < h2.length; i++) {
             h2[i].style.width = "204px";
         }
     } else {
-        headers.addEventListener("onchange", media);
+        headers.addEventListener("onchange", function (e) {
+            if (e.matches) {
+                h2[i].style.width = "166px";
+            } else {
+                h2[i].style.width = "204px";
+            }
+        });
 
-        headers.addListener('change',media)
+        headers.addListener(function (e) {
+            if (e.matches) {
+                h2[i].style.width = "166px";
+            } else {
+                h2[i].style.width = "204px";
+            }
+        })
     }
 }
 
