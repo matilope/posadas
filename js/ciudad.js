@@ -79,7 +79,7 @@ for (let i = 0; i < h2.length; i++) {
     h2[0].style.background = "url(img/ciudad/icono_noticias.png) 10% 28% no-repeat";
     h2[1].style.background = "url(img/ciudad/icono_eventos.png) 10% 28% no-repeat";
 
-    let headers = window.matchMedia('(max-width: 480px)');
+    let headers = window.matchMedia('(screen and max-width: 480px)');
 
     (function () {
         if (headers.matches) {
@@ -88,16 +88,9 @@ for (let i = 0; i < h2.length; i++) {
             h2[i].style.width = "204px";
         }
     })();
+    
 
-    let isSafari = window.safari !== undefined;
 
-    if (isIE || isSafari) {
-        if (headers.matches) {
-            h2[i].style.width = "166px";
-        } else {
-            h2[i].style.width = "204px";
-        }
-    } else {
         headers.addEventListener("onchange", function (e) {
             if (e.matches) {
                 h2[i].style.width = "166px";
@@ -105,7 +98,7 @@ for (let i = 0; i < h2.length; i++) {
                 h2[i].style.width = "204px";
             }
         });
-    }
+    
 }
 
 /* Animation scroll */
