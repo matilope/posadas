@@ -73,46 +73,8 @@ for (let i = 0; i < header.length; i++) {
 const h2 = document.querySelectorAll("h2");
 
 for (let i = 0; i < h2.length; i++) {
-    h2[i].style.fontSize = "30px";
-    h2[i].style.display = "inline-block";
-    h2[i].style.color = "rgb(0,128,0)";
     h2[0].style.background = "url(img/ciudad/icono_noticias.png) 10% 28% no-repeat";
     h2[1].style.background = "url(img/ciudad/icono_eventos.png) 10% 28% no-repeat";
-
-    let headers = window.matchMedia('(max-width: 480px)');
-
-    (function () {
-        if (headers.matches) {
-            h2[i].style.width = "166px";
-        } else {
-            h2[i].style.width = "204px";
-        }
-    })();
-    
-
-    if (isIE) {
-        if (headers.matches) {
-            h2[i].style.width = "166px";
-        } else {
-            h2[i].style.width = "204px";
-        }
-    } else {
-        headers.addEventListener("onchange", function (e) {
-            if (e.matches) {
-                h2[i].style.width = "166px";
-            } else {
-                h2[i].style.width = "204px";
-            }
-        });
-
-        headers.addListener(function (e) {
-            if (e.matches) {
-                h2[i].style.width = "166px";
-            } else {
-                h2[i].style.width = "204px";
-            }
-        })
-    }
 }
 
 /* Animation scroll */

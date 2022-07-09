@@ -377,11 +377,11 @@ section .fila div {
     width: 46%;
 }
 
-.header_visitas{
-    text-align:center;
-    color:rgb(0, 128, 0);
-    font-size:30px;
-    display:inline-block;
+.header_visitas {
+    text-align: center;
+    color: rgb(0, 128, 0);
+    font-size: 30px;
+    display: inline-block;
     background: url("../img/index/icono_visitanos.png") 10% 28% no-repeat;
     width: 223px;
 }
@@ -1046,6 +1046,13 @@ span[lang="pt-BR"] {
     padding: 0px !important;
     color: black !important;
     background-color: transparent !important;
+}
+
+.headers_ciudad {
+    font-size: 30px;
+    display: inline-block;
+    color: rgb(0, 128, 0);
+    width: 204px;
 }
 
 /* Index */
