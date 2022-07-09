@@ -88,8 +88,9 @@ for (let i = 0; i < h2.length; i++) {
             h2[i].style.width = "204px";
         }
     })();
-    let isSafari = chrome.runtime.getURL('https://posadasciudad.herokuapp.com/ciudad.html').startsWith('safari-web-extension://');
-    if (isIE||isSafari) {
+
+    let is_safari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+    if (isIE || is_safari) {
         if (headers.matches) {
             h2[i].style.width = "166px";
         } else {
