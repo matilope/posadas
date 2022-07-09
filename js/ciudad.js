@@ -89,18 +89,9 @@ for (let i = 0; i < h2.length; i++) {
         }
     })();
 
-    var ua = navigator.userAgent.toLowerCase();
-    if (ua.indexOf('safari') != -1) {
-        if (ua.indexOf('chrome') > -1) {
-        } else {
-            if (headers.matches) {
-                h2[i].style.width = "166px";
-            } else {
-                h2[i].style.width = "204px";
-            }
-        }
-    }
-    if (isIE) {
+    let isSafari = window.safari !== undefined;
+
+    if (isIE || isSafari) {
         if (headers.matches) {
             h2[i].style.width = "166px";
         } else {
