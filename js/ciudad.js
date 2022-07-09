@@ -79,7 +79,7 @@ for (let i = 0; i < h2.length; i++) {
     h2[0].style.background = "url(img/ciudad/icono_noticias.png) 10% 28% no-repeat";
     h2[1].style.background = "url(img/ciudad/icono_eventos.png) 10% 28% no-repeat";
 
-    let headers = window.matchMedia('(screen and max-width: 480px)');
+    let headers = window.matchMedia('screen and (max-width: 480px)');
 
     (function () {
         if (headers.matches) {
