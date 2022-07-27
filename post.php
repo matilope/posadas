@@ -49,7 +49,7 @@ use Mailgun\Mailgun;
 
 # Instantiate the client.
 
-$mgClient = new Mailgun('cfde54b68d339230200befc7ceccef79-77985560-ccbed702);
+$mgClient = new Mailgun('cfde54b68d339230200befc7ceccef79-77985560-ccbed702');
 $domain = "https://api.mailgun.net/v3/sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org";
 # Make the call to the client.
 $result = $mgClient->sendMessage($domain, array(
