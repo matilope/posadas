@@ -10,7 +10,7 @@ $actividad=$_POST['actividad'];
 
 // move_uploaded_file($_FILES['imagen']['tmp_name'], "img/formulario/".$imagen);
 
-$destinatario = "mati02171996@gmail.com";
+$destinatario = "matias.lopez@davinci.edu.ar";
 $asunto = "Reserva turismo posadas";
 $mensaje="<table style='margin: 0 auto; width: 360px; background-color: rgb(237, 237, 237); color: #000000; padding: 20px; border-radius: 20px; border: 1px solid #007e0fdb;'>
 <caption style='text-align:center; color:rgb(0,128,0); text-transform:capitalize; font-size:20px; margin-bottom:10px;'>¡Has recibido una reserva de $nombre!</caption>
