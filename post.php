@@ -10,7 +10,7 @@ $actividad=$_POST['actividad'];
 
 // move_uploaded_file($_FILES['imagen']['tmp_name'], "img/formulario/".$imagen);
 
-$destinatario = "matias.lopez@davinci.edu.ar";
+$destinatario = "mati02171996@gmail.com";
 $asunto = "Reserva turismo posadas";
 $mensaje="<table style='margin: 0 auto; width: 360px; background-color: rgb(237, 237, 237); color: #000000; padding: 20px; border-radius: 20px; border: 1px solid #007e0fdb;'>
 <caption style='text-align:center; color:rgb(0,128,0); text-transform:capitalize; font-size:20px; margin-bottom:10px;'>¡Has recibido una reserva de $nombre!</caption>
@@ -42,23 +42,24 @@ $mensaje .= "</tbody></table>";
 // $headers .= "From: $email\r\n";
 // $headers .= "To: $destinatario\r\n";
 
-# Include the Autoloader (see "Libraries" for install instructions)
 
+# Include the Autoloader (see "Libraries" for install instructions)
 require 'vendor/autoload.php';
 use Mailgun\Mailgun;
 
-# Instantiate the client.
+// First, instantiate the SDK with your API credentials
+$mg = Mailgun::create('cfde54b68d339230200befc7ceccef79-77985560-ccbed702'); // For US servers
 
-$mgClient = new Mailgun('cfde54b68d339230200befc7ceccef79-77985560-ccbed702');
-$domain = "https://api.mailgun.net/v3/sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org";
-# Make the call to the client.
-$result = $mgClient->sendMessage($domain, array(
+// Now, compose and send your message.
+// $mg->messages()->send($domain, $params);
+
+$mg->messages()->send('sandbox53e4bca9c3c34c3eabe4ccf736994525.mailgun.org', [
   'from'    =>  $email,
   'to'      => $destinatario,
   'subject' => $asunto,
   'html'    => $mensaje,
   'attachment' => [['filePath'=>$imagen, 'filename'=>'imagen_dni.jpg']]
-));
+]);
 
 // mail($destinatario, $asunto, $mensaje, $headers);
 
